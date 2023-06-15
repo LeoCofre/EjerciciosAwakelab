@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ejercicios Awakelab</string>
+    <string name="name">Name</string>
+
+    <string name="email">Email</string>
+    <string name="last_name">Last Name</string>
+
+
+</resources>
