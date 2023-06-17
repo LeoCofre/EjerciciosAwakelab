@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         EditText numeroDos = findViewById(R.id.editTextSegundoNumero);
 
         Button botonSuma = findViewById(R.id.buttonSuma);
-        Button botonResta = findViewById(R.id.buttonRestaa);
+        Button botonResta = findViewById(R.id.buttonResta);
         Button botonMultiplicacion = findViewById(R.id.buttonMultiplicacion);
         Button botonDivision = findViewById(R.id.buttonDivision);
 
@@ -28,11 +28,36 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String n1 = numeroUno.getText().toString();
                 String n2 = numeroDos.getText().toString();
-                Toast.makeText(this, "Presionaste el Botón de Suma " + n1 + " + " + n2 , Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(MainActivity.this, "Presionaste el boton de suma " + n1 + " + " + n2, Toast.LENGTH_SHORT).show();
             }
         });
 
+        botonResta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String n1 = numeroUno.getText().toString();
+                String n2 = numeroDos.getText().toString();
+                Toast.makeText(MainActivity.this, "Presionaste el boton de resta " + n1 + " - " + n2, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        botonMultiplicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String n1 = numeroUno.getText().toString();
+                String n2 = numeroDos.getText().toString();
+                Toast.makeText(MainActivity.this, "Presionaste el boton de multiplicacion " + n1 + " x " + n2, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        botonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String n1 = numeroUno.getText().toString();
+                String n2 = numeroDos.getText().toString();
+                Toast.makeText(MainActivity.this, "Presionaste el boton de division " + n1 + " / " + n2, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void showToast() {

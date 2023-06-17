@@ -33,20 +33,16 @@
 
     <Button
         android:id="@+id/buttonSuma"
-        android:layout_width="179dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="23dp"
         android:text="@string/sumar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSegundoNumero" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSegundoNumero"
+        style="@style/buttonStyle" />
 
     <Button
         android:id="@+id/buttonResta"
-        android:layout_width="179dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="23dp"
+        style="@style/buttonStyle"
         android:text="@string/restar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -55,19 +51,15 @@
 
     <Button
         android:id="@+id/buttonMultiplicacion"
-        android:layout_width="179dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="23dp"
+        style="@style/buttonStyle"
         android:text="@string/multiplicar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonResta" />
 
     <Button
-        android:id="@+id/buttonDividir"
-        android:layout_width="179dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="23dp"
+        android:id="@+id/buttonDivision"
+        style="@style/buttonStyle"
         android:text="@string/dividir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
