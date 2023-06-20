@@ -26,43 +26,45 @@ public class MainActivity extends AppCompatActivity {
         botonSuma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                Toast.makeText(MainActivity.this, "Presionaste el boton de suma " + n1 + " + " + n2, Toast.LENGTH_SHORT).show();
+                int n1 = Integer.parseInt(numeroUno.getText().toString());
+                int n2 = Integer.parseInt(numeroDos.getText().toString());
+                int resultado = n1 + n2;
+                Toast.makeText(MainActivity.this, "El resultado es  " + resultado, Toast.LENGTH_SHORT).show();
             }
         });
 
         botonResta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                Toast.makeText(MainActivity.this, "Presionaste el boton de resta " + n1 + " - " + n2, Toast.LENGTH_SHORT).show();
+                int n1 = Integer.parseInt(numeroUno.getText().toString());
+                int n2 = Integer.parseInt(numeroDos.getText().toString());
+                int resultado = n1 - n2;
+                Toast.makeText(MainActivity.this, "El resultado es  " + resultado, Toast.LENGTH_SHORT).show();
             }
         });
 
         botonMultiplicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                Toast.makeText(MainActivity.this, "Presionaste el boton de multiplicacion " + n1 + " x " + n2, Toast.LENGTH_SHORT).show();
+                int n1 = Integer.parseInt(numeroUno.getText().toString());
+                int n2 = Integer.parseInt(numeroDos.getText().toString());
+                int resultado = n1 * n2;
+                Toast.makeText(MainActivity.this, "El resultado es  " + resultado, Toast.LENGTH_SHORT).show();
             }
         });
 
         botonDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                Toast.makeText(MainActivity.this, "Presionaste el boton de division " + n1 + " / " + n2, Toast.LENGTH_SHORT).show();
+
+                Double n1 = Double.valueOf(Integer.parseInt(numeroUno.getText().toString()));
+                Double n2 = Double.valueOf(Integer.parseInt(numeroDos.getText().toString()));
+                Double resultado = n1 / n2;
+                Toast.makeText(MainActivity.this, "El resultado es  " + resultado, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void showToast() {
-        Toast.makeText(this, "Presionaste un Botón", Toast.LENGTH_SHORT).show();
-    }
 }
 
 
