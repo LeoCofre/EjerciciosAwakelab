@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
         EditText numeroUno = findViewById(R.id.editTextPrimerNumero);
         EditText numeroDos = findViewById(R.id.editTextSegundoNumero);
-        TextView textResultado = findViewById(R.id.textViewResultado);
 
         Button botonSuma = findViewById(R.id.buttonSuma);
         Button botonResta = findViewById(R.id.buttonResta);
@@ -28,15 +26,9 @@ public class MainActivity extends AppCompatActivity {
         botonSuma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (numeroUno.getText().toString().isEmpty() || numeroDos.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "Rellenar los campos vacios.", Toast.LENGTH_LONG).show();
-                } else {
-                    double numero1 = Double.parseDouble(numeroUno.getText().toString());
-                    double numero2 = Double.parseDouble(numeroDos.getText().toString());
-                    double resultado = numero1 + numero2;
-                    textResultado.setText("Resultado: " + resultado);
-                    Toast.makeText(getBaseContext(), "Apretaste Sumar, resultado: " + resultado, Toast.LENGTH_LONG).show();
-                }
+                String n1 = numeroUno.getText().toString();
+                String n2 = numeroDos.getText().toString();
+                Toast.makeText(MainActivity.this, "Presionaste el boton de suma " + n1 + " + " + n2, Toast.LENGTH_SHORT).show();
             }
         });
 
