@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewResultado"
+        android:id="@+id/textResultado"
         android:layout_width="164dp"
         android:layout_height="44dp"
         android:layout_marginTop="52dp"
