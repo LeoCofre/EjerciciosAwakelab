@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private EditText numeroUno;
     private EditText numeroDos;
-    private TextView textResultado;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         numeroUno = findViewById(R.id.editTextPrimerNumero);
         numeroDos = findViewById(R.id.editTextSegundoNumero);
-        textResultado = findViewById(R.id.textResultado);
+
 
         Button botonSuma = findViewById(R.id.buttonSuma);
         Button botonResta = findViewById(R.id.buttonResta);
@@ -31,49 +31,66 @@ public class MainActivity extends AppCompatActivity {
         botonSuma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validarCamposVacios();
-                double n1 = Double.parseDouble(numeroUno.getText().toString());
-                double n2 = Double.parseDouble(numeroDos.getText().toString());
-                double resultadoSuma = n1 + n2;
-                Toast.makeText(getBaseContext(), "Resultado suma " + resultadoSuma, Toast.LENGTH_SHORT).show();
+
+                if (numeroUno.getText().toString().isEmpty() || numeroDos.getText().toString().isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Rellene los campos vacíos", Toast.LENGTH_LONG).show();
+                } else {
+                    int n1 = Integer.parseInt(numeroUno.getText().toString());
+                    int n2 = Integer.parseInt((numeroDos.getText().toString()));
+                    int resultadoSuma = n1 + n2;
+                    Toast.makeText(getBaseContext(), "Resultado suma " + resultadoSuma, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        botonResta.setOnClickListener(new View.OnClickListener  () {
+        botonResta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                validarCamposVacios();
-                Toast.makeText(getBaseContext(), "Presionaste el boton de resta " + n1 + " - " + n2, Toast.LENGTH_SHORT).show();
+                if (numeroUno.getText().toString().isEmpty() || numeroDos.getText().toString().isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Rellene los campos vacíos", Toast.LENGTH_LONG).show();
+                } else {
+                    int n1 = Integer.parseInt(numeroUno.getText().toString());
+                    int n2 = Integer.parseInt((numeroDos.getText().toString()));
+                    int resultadoResta = n1 - n2;
+                    Toast.makeText(getBaseContext(), "Resultado resta " + resultadoResta, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         botonMultiplicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                Toast.makeText(getBaseContext(), "Presionaste el boton de multiplicacion " + n1 + " x " + n2, Toast.LENGTH_SHORT).show();
+                if (numeroUno.getText().toString().isEmpty() || numeroDos.getText().toString().isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Rellene los campos vacíos", Toast.LENGTH_LONG).show();
+                } else {
+                    int n1 = Integer.parseInt(numeroUno.getText().toString());
+                    int n2 = Integer.parseInt((numeroDos.getText().toString()));
+                    int resultadoMultiplicacion = n1 * n2;
+                    Toast.makeText(getBaseContext(), "Resultado multiplicacion " + resultadoMultiplicacion, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         botonDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n1 = numeroUno.getText().toString();
-                String n2 = numeroDos.getText().toString();
-                Toast.makeText(getBaseContext(), "Presionaste el boton de division " + n1 + " / " + n2, Toast.LENGTH_SHORT).show();
+                if (numeroUno.getText().toString().isEmpty() || numeroDos.getText().toString().isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Rellene los campos vacíos", Toast.LENGTH_LONG).show();
+                } else {
+                    if (Integer.parseInt(numeroDos.getText().toString()) == 0 ) {
+                        Toast.makeText(getBaseContext(), "No  puede dividir por cero", Toast.LENGTH_LONG).show();
+                    } else {
+                        double n1 = Integer.parseInt(numeroUno.getText().toString());
+                        double n2 = Integer.parseInt((numeroDos.getText().toString()));
+                        double resultadoDivision = n1 / n2;
+                        Toast.makeText(getBaseContext(), "Resultado división " + resultadoDivision, Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }
 
-    private void validarCamposVacios() {
-        if (numeroUno.getText().toString().isEmpty() || numeroDos.getText().toString().isEmpty()){
-            Toast.makeText(getBaseContext(),"Rellene los campos vacíos", Toast.LENGTH_LONG).show();
-            return;
-        };
-    }
+
 }
 
 
